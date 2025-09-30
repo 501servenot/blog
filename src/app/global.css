@@ -1,0 +1,18 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    cursor: none;
+    
+}
+* {
+  cursor: none !important;
+}
+
+:root {
+
+}
+
+
+body {
+    background-color: oklch(20.5% 0 0);
+}
