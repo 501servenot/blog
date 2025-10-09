@@ -1,5 +1,6 @@
 "use client";
 
+import { MousePointer2 } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 
 interface CursorProps {
@@ -65,14 +66,15 @@ export default function Cursor({
         transition: "opacity 0.3s ease",
       }}
     >
-      <svg
+      <MousePointer2 width={size} height={size} color={color} />
+      {/* <svg
         className="iconpark-icon"
         width={size}
         height={size}
         style={{ fill: color, color: color }}
       >
         <use href="#cursor"></use>
-      </svg>
+      </svg> */}
     </div>
   );
 }
