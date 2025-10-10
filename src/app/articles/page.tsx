@@ -1,9 +1,5 @@
 'use client'
 
-import { useEffect, useState } from "react";
-import Image from 'next/Image';
-import Link from "next/link";
-
 export default function Articles() {
     return (
       <div className="mx-auto max-w-1/3">

@@ -1,8 +1,8 @@
 "use client";
 
-import { MousePointer2, MousePointerClick } from "lucide-react";
+import { MousePointer2 } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
-import gsap from "gsap";
+// import gsap from "gsap";
 
 interface CursorProps {
   size: number;
@@ -17,12 +17,12 @@ export default function Cursor({
 }: CursorProps) {
   const cursorref = useRef<HTMLDivElement>(null);
   const defaultRef = useRef<SVGSVGElement>(null);
-  const hoverRef = useRef<SVGSVGElement>(null);
+  // const hoverRef = useRef<SVGSVGElement>(null);
   const mouseX = useRef(0);
   const mouseY = useRef(0);
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [visible, setVisible] = useState(true);
-  const [isClickable, setClickable] = useState(false);
+  // const [isClickable, setClickable] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
