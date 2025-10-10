@@ -15,7 +15,7 @@ gsap.registerPlugin(SplitText);
 export default function RollingText({
   text,
   duration = 1.0,
-  delay = 0.06,
+  delay = 0.05,
   direction = "up",
 }: RollingTextProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -34,8 +34,8 @@ export default function RollingText({
 
     // 构建时间线动画
     const tl = gsap.timeline({
-      repeat: -1,
-      repeatDelay: 0.3,
+       repeat: -1,
+       repeatDelay: 0.3,
     });
 
     // 进入动画
@@ -65,7 +65,7 @@ export default function RollingText({
   return (
     <div
       ref={containerRef}
-      className="overflow-hidden text-white text-5xl font-extrabold tracking-wide"
+      className="overflow-hidden text-5xl font-extrabold tracking-wide"
     >
       {text}
     </div>

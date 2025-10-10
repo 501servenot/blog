@@ -17,4 +17,5 @@ body, html {
 
 body {
     background-color: oklch(20.5% 0 0);
+    font-family: var(--font-my-font), sans-serif;
 }
