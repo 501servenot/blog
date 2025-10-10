@@ -11,9 +11,10 @@ export default function AboutMe() {
     "SupabaseIcon.svg",
     "Tailwindcss.svg",
     "Typescript.svg",
+    "vite.svg"
   ];
 
-  const toolicons = ["figma.svg", "perplexity.svg", 'vscode.svg', 'arc.svg', 'notion.svg'];
+  const toolicons = ["figma.svg", "perplexity.svg", 'vscode.svg', 'arc.svg', 'notion.svg', 'cursor.svg'];
   return (
     <div className=" mx-auto max-w-1/3">
       <h1 className="text-2xl mt-10">关于我</h1>
@@ -30,7 +31,7 @@ export default function AboutMe() {
       </div>
       <div className="mt-4">
         <h2 className="font-lg font-medium">我使用的技术栈:</h2>
-        <div className="grid grid-cols-4 gap-6 px-6 py-2">
+        <div className="grid grid-cols-4 gap-x-6 px-6 py-2">
           {tecicons.map((icon) => (
             <div
               className="flex items-center justify-center w-16 h-16"
@@ -47,7 +48,7 @@ export default function AboutMe() {
           ))}
         </div>
         <h2 className="font-lg font-medium">我使用的工具栈:</h2>
-        <div className="grid grid-cols-4 gap-6 px-6 py-2">
+        <div className="grid grid-cols-4 gap-x-6 px-6 py-2">
           {toolicons.map((icon) => (
             <div
               className="flex items-center justify-center w-16 h-16 "

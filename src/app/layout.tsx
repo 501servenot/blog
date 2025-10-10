@@ -55,7 +55,7 @@ export default function RootLayout({
         <Cursor size={24} delay={0.15} color="#e9e9e9ff" />
         <Header />
         {children}
-        <footer className="text-xs text-neutral-300 mt-16 flex justify-center items-center flex-col">
+        <footer className="text-xs text-neutral-300 mt-15 flex justify-center items-center flex-col mb-4">
           <div className="h-px bg-neutral-800 w-1/3 mb-2"></div>
           ©Mr·Zhang | ©2025
         </footer>
