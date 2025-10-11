@@ -2,6 +2,7 @@
 
 import { MousePointer2 } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
+import useIsMobile from "@/hooks/useIsMobile";
 // import gsap from "gsap";
 
 interface CursorProps {
@@ -23,6 +24,7 @@ export default function Cursor({
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [visible, setVisible] = useState(true);
   // const [isClickable, setClickable] = useState(false);
+  const isMobile = useIsMobile()
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -119,6 +121,8 @@ export default function Cursor({
   //   }
   // }, [isClickable])
 
+  if (isMobile) return null;
+  
   return (
     <div
       ref={cursorref}

@@ -15,7 +15,7 @@ export default function AboutMe() {
 
   const toolicons = ["figma.svg", "perplexity.svg", 'vscode.svg', 'arc.svg', 'notion.svg', 'cursor.svg'];
   return (
-    <div className=" mx-auto max-w-1/3">
+    <div className="">
       <h1 className="text-2xl mt-10">关于我</h1>
       <div className="ml-6">
         <p className=" font-medium mt-4">

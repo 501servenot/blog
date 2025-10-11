@@ -40,10 +40,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${myfont.variable} antialiased text-neutral-300`}>
-        <Cursor size={24} delay={0.15} color="#e9e9e9ff" />
-        <Header />
-        {children}
-        <Analytics/>
+        <div className="mx-auto w-full max-w-full sm:max-w-3xl md:max-w-2xl lg:max-w-1/2 xl:max-w-1/3 px-10">
+          <Cursor size={24} delay={0.15} color="#e9e9e9ff" />
+          <Header />
+          {children}
+          <Analytics />
+        </div>
         <footer className="text-xs text-neutral-300 mt-15 flex justify-center items-center flex-col mb-4">
           <div className="h-px bg-neutral-800 w-1/3 mb-2"></div>
           ©Mr·Zhang | ©2025

@@ -18,7 +18,7 @@ export default function Home() {
   };
 
   return (
-    <div className="mx-auto max-w-1/3">
+    <div className="">
       <main>
         <Image
           src={"/avatar.jpg"}
