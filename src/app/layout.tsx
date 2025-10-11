@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Cursor from "@/components/Cursor";
 import localFont from 'next/font/local';
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const myfont = localFont({
   src: [
@@ -45,6 +46,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Analytics />
+          <SpeedInsights/>
         </div>
         <footer className="text-xs text-neutral-300 mt-15 flex justify-center items-center flex-col mb-4">
           <div className="h-px bg-neutral-800 w-1/3 mb-2"></div>
