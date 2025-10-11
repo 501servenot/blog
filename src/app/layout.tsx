@@ -3,6 +3,7 @@ import "./global.css";
 import Header from "@/components/Header";
 import Cursor from "@/components/Cursor";
 import localFont from 'next/font/local';
+import { Analytics } from "@vercel/analytics/next";
 
 const myfont = localFont({
   src: [
@@ -27,7 +28,7 @@ const myfont = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "MrZhangBlog",
+  title: "Zhanggggg",
   description: "The personal blog created by MrZhang",
 };
 
@@ -42,6 +43,7 @@ export default function RootLayout({
         <Cursor size={24} delay={0.15} color="#e9e9e9ff" />
         <Header />
         {children}
+        <Analytics/>
         <footer className="text-xs text-neutral-300 mt-15 flex justify-center items-center flex-col mb-4">
           <div className="h-px bg-neutral-800 w-1/3 mb-2"></div>
           ©Mr·Zhang | ©2025
