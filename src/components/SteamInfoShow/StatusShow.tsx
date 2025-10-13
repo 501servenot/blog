@@ -39,7 +39,7 @@ export default function StatusShow({ state }: StatusShowProps) {
 
   return (
     // 使用 flex 布局，项目居中，间距为 2 (0.5rem)
-    <div ref={containerRef} className="flex items-center gap-1 ml-55">
+    <div ref={containerRef} className="flex items-center gap-1 absolute right-13 top-5">
       <div
         className={`
           w-1.5 h-1.5 rounded-full

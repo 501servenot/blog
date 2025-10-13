@@ -69,9 +69,9 @@ export default function SteamInfoShow({
             <div ref={nameRef} className="font-medium text-xs">
               {userinfo?.personaname || "Loading..."}
             </div>
-            <StatusShow state={userinfo?.personastate ?? 0} />
           </div>
         </div>
+        <StatusShow state={userinfo?.personastate ?? 0} />
       </div>
     </div>
   );
