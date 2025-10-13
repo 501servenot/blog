@@ -1,7 +1,7 @@
 "use client";
 import RollingText from "@/components/RollingText";
 import Image from "next/image";
-
+import SteamInfoShow from "@/components/SteamInfoShow";
 
 export default function Home() {
   const handletoX = () => {
@@ -57,6 +57,9 @@ export default function Home() {
             alt="github"
             onClick={handletoB}
           />
+        </div>
+        <div className="mt-6">
+          <SteamInfoShow pollingInterval={15000} />
         </div>
       </main>
     </div>
