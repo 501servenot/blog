@@ -19,7 +19,7 @@ export default function DrawGameConsole() {
     gsap.set(".draw-path", { drawSVG: "0%" });
 
     // 所有部件同时开始，3秒内完成，线性动画，不同的绘制方向
-    tl.to(".body-frame", { drawSVG: "0% 100%", duration: 3, ease: "none" }, 0) // 顺时针绘制
+    tl.to(".body-frame", { drawSVG: "0% 100%", duration: 3, ease: "none" }, 0)
       .to(
         ".screen-frame",
         { drawSVG: "100% 0%", duration: 3.2, ease: "none" },
@@ -48,6 +48,37 @@ export default function DrawGameConsole() {
         { drawSVG: "0% 100%", duration: 2.5, ease: "none" },
         0
       ); // 从左上到右下
+
+    // Steam图标的独立动画时间线
+    const steamTl = gsap.timeline();
+
+    // 设置Steam图标初始状态：完全隐藏和模糊
+    gsap.set(".steam", {
+      filter: "blur(15px)",
+      opacity: 0,
+      scale: 0.8,
+    });
+
+    // Steam图标动画序列
+    steamTl
+      // 4秒后开始显示：从模糊到清晰
+      .to(".steam", {
+        filter: "blur(0px)",
+        opacity: 1,
+        scale: 1,
+        duration: 1, // 1秒变清晰
+        delay: 4, // 4秒后开始
+        ease: "power2.out",
+      })
+      // 停留2秒后开始消失：从清晰到模糊
+      .to(".steam", {
+        filter: "blur(15px)",
+        opacity: 0,
+        scale: 0.8,
+        duration: 1.5, // 1秒变模糊消失
+        delay: 3, // 停留2秒
+        ease: "power2.in",
+      });
   }, []);
   return (
     <svg ref={containerRef} width={350} height={265} viewBox="0 0 400 300">
@@ -210,6 +241,21 @@ export default function DrawGameConsole() {
           strokeWidth="1"
           fill="none"
         />
+      </g>
+
+      {/* steam图标 */}
+      <g className="steam" transform="translate(162, 55)">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="70"
+          height="70"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="#e6e6e6"
+            d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658a3.4 3.4 0 0 1 1.912-.59q.094.001.188.006l2.861-4.142V8.91a4.53 4.53 0 0 1 4.524-4.524c2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911l.004.159a3.39 3.39 0 0 1-3.39 3.396a3.41 3.41 0 0 1-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0M7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25a2.551 2.551 0 0 0 3.337-3.324a2.547 2.547 0 0 0-3.255-1.413l1.523.63a1.878 1.878 0 0 1-1.445 3.467zm11.415-9.303a3.02 3.02 0 0 0-3.015-3.015a3.015 3.015 0 1 0 3.015 3.015m-5.273-.005a2.264 2.264 0 1 1 4.531 0a2.267 2.267 0 0 1-2.266 2.265a2.264 2.264 0 0 1-2.265-2.265"
+          />
+        </svg>
       </g>
     </svg>
   );
