@@ -1,6 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
 
-const STEAM_API_KEY = process.env.NEXT_PUBLIC_STEAM_API_KEY;
+const STEAM_API_KEY = process.env.STEAM_API_KEY;
 const STEAM_BASE_URL =
     "https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/";
   
