@@ -13,11 +13,19 @@
     "@svgr/webpack": "^8.1.0",
     "@vercel/speed-insights": "^1.2.0",
     "axios": "^1.12.2",
+    "clsx": "^2.1.1",
+    "geist": "^1.5.1",
+    "gray-matter": "^4.0.3",
     "gsap": "^3.13.0",
+    "highlight.js": "^11.11.1",
     "lucide-react": "^0.545.0",
     "next": "15.5.4",
+    "next-mdx-remote": "^5.0.0",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "rehype-highlight": "^7.0.2",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

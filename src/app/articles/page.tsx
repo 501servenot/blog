@@ -1,10 +1,8 @@
-'use client'
+import { getAllArticles } from "@/lib/fs";
+import ArticlesList from "@/components/ArticlesList";
 
-export default function Articles() {
-    return (
-      <div className="">
-        <h1 className=" mt-10 text-2xl">Posts</h1>
-        <p className=" text-xs">一些有趣的文章</p>
-      </div>
-    );
+export default async function Articles() {
+  const articles = getAllArticles();
+
+  return <ArticlesList articles={articles} />;
 }

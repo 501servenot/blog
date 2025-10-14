@@ -57,21 +57,23 @@ export default function SteamInfoShow({
   }, []);
 
   return (
-    <div className="relative">
+    <div className="">
       {/* 显示最后更新时间 */}
       {/* <div className="text-xs mt-2">
         最后更新: {new Date().toLocaleTimeString()}
       </div> */}
-      <div className="relative">
-        <DrawGameConsole />
-        <div className="absolute top-5 left-6 flex items-center gap-3">
-          <div className="flex">
-            <div ref={nameRef} className="font-medium text-xs">
-              {userinfo?.personaname || "Loading..."}
+      <div className="flex justify-center items-center">
+        <div className="relative">
+          <DrawGameConsole />
+          <div className=" flex items-center gap-3 absolute top-5 left-6">
+            <div className="flex">
+              <div ref={nameRef} className="font-medium text-xs">
+                {userinfo?.personaname || "Loading..."}
+              </div>
             </div>
           </div>
+          <StatusShow state={userinfo?.personastate ?? 0} />
         </div>
-        <StatusShow state={userinfo?.personastate ?? 0} />
       </div>
     </div>
   );

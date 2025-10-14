@@ -136,7 +136,7 @@ export default function Cursor({
         opacity: visible ? 1 : 0,
         transition: "opacity 0.3s ease",
       }}
-      className="border border-white"
+      className="mt-3 ml-3"
     >
       <MousePointer2
         ref={defaultRef}
