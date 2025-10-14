@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./global.css";
 import Header from "@/components/Header";
 import Cursor from "@/components/Cursor";
-import localFont from 'next/font/local';
+import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -44,9 +44,9 @@ export default function RootLayout({
         <div className="mx-auto max-w-full sm:max-w-xl md:max-w-2xl lg:w-1/2 xl:max-w-xl px-8">
           <Cursor size={24} delay={0.25} color="#e9e9e9ff" />
           <Header />
-          {children}
+          <main className="pt-20">{children}</main>
           <Analytics />
-          <SpeedInsights/>
+          <SpeedInsights />
         </div>
         <footer className="text-xs text-neutral-300 mt-15 flex justify-center items-center flex-col mb-4">
           <div className="h-px bg-neutral-800 w-1/3 mb-2"></div>

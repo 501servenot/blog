@@ -293,7 +293,7 @@ const CustomMDXComponents = {
     ) {
       return children;
     }
-    return <pre {...props}>{children}</pre>;
+    return <pre {...props} className="overflow-x-auto">{children}</pre>;
   },
 
   // 列表
