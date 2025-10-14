@@ -42,7 +42,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${myfont.variable} antialiased text-neutral-300`}>
         <div className="mx-auto max-w-full sm:max-w-xl md:max-w-2xl lg:w-1/2 xl:max-w-xl px-8">
-          <Cursor size={24} delay={0.05} color="#e9e9e9ff" />
+          <Cursor size={24} delay={0.25} color="#e9e9e9ff" />
           <Header />
           {children}
           <Analytics />
