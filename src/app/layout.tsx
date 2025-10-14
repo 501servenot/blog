@@ -9,17 +9,17 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const myfont = localFont({
   src: [
     {
-      path: "./fonts/MapleMono-NF-CN-Italic.ttf",
+      path: "./fonts/MapleMono-NF-CN-Italic.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./fonts/MapleMono-NF-CN-LightItalic.ttf",
+      path: "./fonts/MapleMono-NF-CN-LightItalic.woff2",
       weight: "300",
       style: "light",
     },
     {
-      path: "./fonts/MapleMono-NF-CN-MediumItalic.ttf",
+      path: "./fonts/MapleMono-NF-CN-MediumItalic.woff2",
       weight: "500",
       style: "medium",
     },
