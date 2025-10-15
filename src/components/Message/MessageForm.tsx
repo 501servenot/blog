@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
-import { LoaderCircle } from "lucide-react";
 
 export default function MessageForm() {
   const [content, setContent] = useState("");

@@ -1,6 +1,7 @@
 "use client";
 import { supabase } from "@/lib/supabaseClient";
 import { useEffect, useState, useCallback, memo } from "react";
+import type { RealtimeChannel } from "@supabase/supabase-js";
 
 type Message = {
   id: string;
@@ -104,7 +105,6 @@ export default function MessageList() {
 
   // 重连功能
   const reconnect = useCallback(async () => {
-    console.log("🔄 尝试重新连接...");
     setConnectionStatus("connecting");
 
     // 延迟一下再重连，避免过于频繁
@@ -122,13 +122,12 @@ export default function MessageList() {
   }, []);
 
   useEffect(() => {
-    let channel: any;
+    let channel: RealtimeChannel | null = null;
     let retryCount = 0;
     const maxRetries = 3;
 
     const setupRealtimeAndFetch = async () => {
       try {
-
         // 获取消息（不依赖连接测试）
         const { data, error } = await supabase
           .from("messages")
@@ -140,7 +139,6 @@ export default function MessageList() {
           // 不要立即设置为错误状态，继续尝试实时连接
         } else if (data) {
           setMessages(data);
-          console.log(`📨 加载了 ${data.length} 条历史消息`);
         }
 
         // 设置实时监听
@@ -166,24 +164,21 @@ export default function MessageList() {
             switch (status) {
               case "SUBSCRIBED":
                 setConnectionStatus("connected");
-                
+
                 retryCount = 0; // 重置重试计数
                 break;
               case "CHANNEL_ERROR":
-                
                 handleConnectionError();
                 break;
               case "TIMED_OUT":
-                
                 handleConnectionError();
                 break;
               case "CLOSED":
                 setConnectionStatus("disconnected");
-                
+
                 break;
               default:
                 setConnectionStatus("connecting");
-                
             }
           });
       } catch (err) {
@@ -227,7 +222,6 @@ export default function MessageList() {
   useEffect(() => {
     const handleVisibilityChange = async () => {
       if (document.visibilityState === "visible") {
-
         // 如果连接状态不是已连接，尝试重连
         if (connectionStatus !== "connected") {
           const canReconnect = await reconnect();

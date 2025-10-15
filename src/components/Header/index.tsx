@@ -1,5 +1,4 @@
 "use client";
-import { House, GalleryVerticalEnd, User } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function Header() {
