@@ -22,11 +22,11 @@ export default function Home() {
     <div className="">
       <main>
         <Image
-          src={"/avatar.jpg"}
-          width={60}
-          height={60}
+          src={"/avatar.svg"}
+          width={70}
+          height={70}
           alt="avatar"
-          className="rounded-full object-cover w-20 h-20 mt-20"
+          className="object-cover w-25 h-25 mt-20"
         />
         <h1 className="mt-6">
           <RollingText text="Hello" duration={0.8} delay={0.1} direction="up" />
