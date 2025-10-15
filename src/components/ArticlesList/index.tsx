@@ -39,12 +39,23 @@ export default function ArticlesList({ articles }: ArticlesListProps) {
         <h1 className="mt-10 text-xl font-semibold">Posts</h1>
         <p className="text-xs mt-1 mb-8">一些有趣的文章</p>
       </div>
-      <div>
+      {/* <div>
         <ArticleCard article={articles[0]} width={600} height={400} index={1}/>
       </div>
       <div className="space-y-6 flex justify-between">
         {articles.slice(1).map((article, index) => (
           <ArticleCard key={article.slug} article={article} index={index} width={250} height={100}/>
+        ))}
+      </div> */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {articles.map((article, index) => (
+          <ArticleCard
+            key={article.slug}
+            article={article}
+            index={index}
+            // 对第一篇文章应用特殊的样式，让它在桌面端跨越整行
+            className={index === 0 ? "md:col-span-full" : ""}
+          />
         ))}
       </div>
     </div>

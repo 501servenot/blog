@@ -9,15 +9,13 @@ import gsap from "gsap";
 interface ArticleCardProps {
   article: Article;
   index: number; // 添加索引用于错开动画时间
-  width: number;
-  height: number;
+  className: string;
 }
 
 export default function ArticleCard({
   article,
   index,
-  width,
-  height,
+  className,
 }: ArticleCardProps) {
   const cardRef = useRef<HTMLAnchorElement>(null);
 
@@ -46,13 +44,13 @@ export default function ArticleCard({
     <Link
       ref={cardRef}
       href={`/articles/${article.slug}`}
-      className="inline-block group mb-6"
+      className={`block group mb-6 ${className}`}
     >
       <div className="rounded-xl relative ">
         <Image
           src={article.cover}
-          width={width}
-          height={height}
+          width={800}
+          height={600}
           alt="cover"
           className="rounded-xl object-cover transition-all duration-300"
         />
