@@ -1,5 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function Header() {
   const router = useRouter();
@@ -22,27 +23,35 @@ export default function Header() {
         className="flex items-center justify-center gap-10 py-6 rounded-full border border-white/10 
               bg-oklch(20.5% 0 0) backdrop-blur-xs overflow-hidden shadow-lg h-10 w-65"
       >
-        <img
+        <Image
+          alt="home"
           width={18}
+          height={18}
           src={"/home.svg"}
           className="text-stone-300 transform transition-all duration-500 ease-out hover:text-stone-200 hover:scale-110 cursor-pointer"
           onClick={handleClickHome}
         />
 
-        <img
+        <Image
+          alt="articles"
           width={18}
+          height={18}
           src={"/article.svg"}
           className="text-stone-300 transform transition-all duration-500 ease-out hover:text-stone-200 hover:scale-110 cursor-pointer"
           onClick={handleClickArticles}
         />
-        <img
+        <Image
+          alt="about"
           width={18}
+          height={18}
           src={"/about.svg"}
           className="text-stone-300 transform transition-all duration-500 ease-out hover:text-stone-200 hover:scale-110 cursor-pointer"
           onClick={handleClickAbout}
         />
-        <img
+        <Image
+          alt="chat"
           width={18}
+          height={18}
           src={"/chat.svg"}
           className="text-stone-300 transform transition-all duration-500 ease-out hover:text-stone-200 hover:scale-110 cursor-pointer"
           onClick={handleClickChat}
