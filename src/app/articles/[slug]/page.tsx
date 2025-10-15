@@ -3,6 +3,7 @@ import { serializeMarkdown } from "@/lib/md";
 import MdxRenderer from "@/components/MdRender/MdxRenderer";
 import { ChevronsLeft } from "lucide-react";
 import BlurText from "@/components/BlurText";
+import Link from "next/link";
 
 export default async function Articles({
   params,
@@ -14,10 +15,13 @@ export default async function Articles({
 
   return (
     <div className="mt-10">
-      <div className="flex gap-1 mb-2">
+      <Link
+        href="/articles"
+        className="flex gap-1 mb-2 cursor-pointer hover:text-neutral-100 transition-colors"
+      >
         <ChevronsLeft className="w-5 h-5" />
-        <span className="text-sm hover:text-neutral-100">返回</span>
-      </div>
+        <span className="text-sm">返回</span>
+      </Link>
       <h1 className="text-xl font-bold mb-4">{article.title}</h1>
       <div className="flex gap-6">
         <div className="text-xs flex-col text-neutral-400">
@@ -32,7 +36,7 @@ export default async function Articles({
       <div className="flex-col mt-4 border-[2px] border-neutral-600 rounded-2xl bg-[#222222] px-4 py-2">
         <div className="text-xs text-neutral-50">
           <BlurText
-            text='文章摘要'
+            text="文章摘要"
             speed={1}
             stagger={0.12}
             blur={30}
