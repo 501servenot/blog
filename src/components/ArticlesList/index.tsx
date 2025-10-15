@@ -28,7 +28,7 @@ export default function ArticlesList({ articles }: ArticlesListProps) {
       y: 0,
       filter: "blur(0px)",
       duration: 0.8,
-      stagger: 0.2, // 标题和副标题错开显示
+      stagger: 0.2,
       ease: "power2.out",
     });
   }, []);
@@ -39,9 +39,12 @@ export default function ArticlesList({ articles }: ArticlesListProps) {
         <h1 className="mt-10 text-xl font-semibold">Posts</h1>
         <p className="text-xs mt-1 mb-8">一些有趣的文章</p>
       </div>
-      <div className="space-y-6">
-        {articles.map((article, index) => (
-          <ArticleCard key={article.slug} article={article} index={index} />
+      <div>
+        <ArticleCard article={articles[0]} width={600} height={400} index={1}/>
+      </div>
+      <div className="space-y-6 flex justify-between">
+        {articles.slice(1).map((article, index) => (
+          <ArticleCard key={article.slug} article={article} index={index} width={250} height={100}/>
         ))}
       </div>
     </div>

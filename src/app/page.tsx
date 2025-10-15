@@ -1,5 +1,6 @@
 "use client";
 import RollingText from "@/components/RollingText";
+import BlurText from "@/components/BlurText";
 import Image from "next/image";
 import SteamInfoShow from "@/components/SteamInfoShow";
 
@@ -31,9 +32,33 @@ export default function Home() {
           <RollingText text="Hello" duration={0.8} delay={0.1} direction="up" />
         </h1>
         <p className="text-lg mt-5">👋我是MrZhang</p>
-        <p className="mt-2">一名前端开发工程师</p>
-        <p className="mt-2">喜欢新技术，写一些炫酷的东西</p>
-        <p className="mt-2">你可以在这里发现有趣，有用的文章和技术</p>
+        <div className="mt-2">
+          <BlurText
+            text="一名前端开发工程师"
+            speed={0.9}
+            stagger={0.12}
+            blur={30}
+            delay={0.1}
+          />
+        </div>
+        <div className="mt-2">
+          <BlurText
+            text="喜欢新技术，写一些炫酷的东西"
+            speed={0.7}
+            stagger={0.12}
+            blur={30}
+            delay={0.5}
+          />
+        </div>
+        <div className="mt-2">
+          <BlurText
+            text="你可以在这里发现有趣，有用的文章和技术"
+            speed={0.8}
+            stagger={0.12}
+            blur={30}
+            delay={1.0}
+          />
+        </div>
         <div className="text-xl mt-4">#MrZhanggggg</div>
         <div className="flex gap-5 mt-4">
           <Image

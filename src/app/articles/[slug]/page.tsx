@@ -1,7 +1,8 @@
 import { getAllArticleBySlug } from "@/lib/fs";
-import { serializeMarkdown } from "@/lib/mdtest";
+import { serializeMarkdown } from "@/lib/md";
 import MdxRenderer from "@/components/MdRender/MdxRenderer";
 import { ChevronsLeft } from "lucide-react";
+import BlurText from "@/components/BlurText";
 
 export default async function Articles({
   params,
@@ -13,8 +14,7 @@ export default async function Articles({
 
   return (
     <div className="mt-10">
-      <div className="flex gap-1 mb-2"
-      >
+      <div className="flex gap-1 mb-2">
         <ChevronsLeft className="w-5 h-5" />
         <span className="text-sm hover:text-neutral-100">返回</span>
       </div>
@@ -28,6 +28,26 @@ export default async function Articles({
           作者
           <div className="mt-1 text-neutral-100">MrZhang</div>
         </div>
+      </div>
+      <div className="flex-col mt-4 border-[2px] border-neutral-600 rounded-2xl bg-[#222222] px-4 py-2">
+        <div className="text-xs text-neutral-50">
+          <BlurText
+            text='文章摘要'
+            speed={1}
+            stagger={0.12}
+            blur={30}
+            delay={0.1}
+            className=""
+          />
+        </div>
+        <BlurText
+          text={article.description}
+          speed={0.7}
+          stagger={0.12}
+          blur={30}
+          delay={0.1}
+          className="text-[11px] ml-2"
+        />
       </div>
       <article className="prose mx-auto dark:prose-invert">
         <MdxRenderer mdxSource={mdxSource} />

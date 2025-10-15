@@ -1,9 +1,9 @@
 ---
-title: '测试文章'
+title: '鼠标定制'
 date: '2025-10-14'
-tags: ["Next.js", "Markdown", "博客"]
-description: '一篇关于介绍水星的文章'
-cover: '/blogcover/cursor.webp'
+tags: ["定制化", "光标", "样式"]
+description: '如和更换鼠标的外观'
+cover: '/blogcover/cursor/cursorcover.webp'
 ---
 
 # 水星

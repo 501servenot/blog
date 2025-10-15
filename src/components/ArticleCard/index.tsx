@@ -9,9 +9,16 @@ import gsap from "gsap";
 interface ArticleCardProps {
   article: Article;
   index: number; // 添加索引用于错开动画时间
+  width: number;
+  height: number;
 }
 
-export default function ArticleCard({ article, index }: ArticleCardProps) {
+export default function ArticleCard({
+  article,
+  index,
+  width,
+  height,
+}: ArticleCardProps) {
   const cardRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
@@ -39,23 +46,25 @@ export default function ArticleCard({ article, index }: ArticleCardProps) {
     <Link
       ref={cardRef}
       href={`/articles/${article.slug}`}
-      className="block group mb-6"
+      className="inline-block group mb-6"
     >
-      <div className="overflow-hidden rounded-xl relative">
+      <div className="rounded-xl relative ">
         <Image
           src={article.cover}
-          width={600}
-          height={400}
+          width={width}
+          height={height}
           alt="cover"
           className="rounded-xl object-cover transition-all duration-300"
         />
         {/* 暗化遮罩层 */}
         <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-300 rounded-xl"></div>
       </div>
-      <h2 className="text-sm font-semibold text-neutral-200 mt-2">
-        {article.title}
-      </h2>
-      <p className="text-xs text-neutral-500">{article.date}</p>
+      <div className="mt-2">
+        <h2 className="text-sm font-semibold text-neutral-200">
+          {article.title}
+        </h2>
+        <p className="text-xs text-neutral-500">{article.date}</p>
+      </div>
     </Link>
   );
 }
