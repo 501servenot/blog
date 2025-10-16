@@ -3,7 +3,7 @@ title: '鼠标定制'
 date: '2025-10-14'
 tags: ["定制化", "光标", "样式"]
 description: '如和更换鼠标的外观'
-cover: '/blogcover/cursor/cursorcover.webp'
+cover: '/blogimage/cursor/cursorcover.webp'
 ---
 
 # 水星
@@ -32,12 +32,4 @@ Just a link: www.nasa.gov.
 * todo
 * done
 
-A table:
-
-| a | b |
-| - | - |
-
-
-```js
-console.log('Hi plutooooooooooooooooooooooooooooooooooooooooooooooooooooo!')
-```
+![](/blogimage/cursor/01.png)

@@ -3,8 +3,11 @@ import RollingText from "@/components/RollingText";
 import BlurText from "@/components/BlurText";
 import Image from "next/image";
 import SteamInfoShow from "@/components/SteamInfoShow";
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
 
 export default function Home() {
+  const avatarRef = useRef<HTMLImageElement>(null)
   const handletoX = () => {
     window.open("https://x.com/Mrzhanggggg", "_blank");
   };
@@ -18,11 +21,28 @@ export default function Home() {
     );
   };
 
+  useEffect(() => {
+    gsap.fromTo(
+      avatarRef.current,
+      {
+        opacity: 0,
+        filter: `blur(20px)`,
+      },
+      {
+        opacity: 1,
+        duration: 2,
+        filter: 'blur(0px)',
+        ease: "power2.out",
+      }
+    );
+  }, [])
+
   return (
     <div className="">
       <main>
         <Image
-          src={"/avatar.svg"}
+          ref={avatarRef}
+          src={"/avatar.png"}
           width={70}
           height={70}
           alt="avatar"

@@ -21,7 +21,7 @@ export default function Header() {
     <div className="fixed left-1/2 -translate-x-1/2 top-8 z-50">
       <div
         className="flex items-center justify-center gap-10 py-6 rounded-full border border-white/10 
-              bg-oklch(20.5% 0 0) backdrop-blur-xs overflow-hidden shadow-lg h-10 w-65"
+              bg-oklch(20.5% 0 0) backdrop-blur-xs overflow-hidden shadow-lg h-10 w-65 bg-neutral-800"
       >
         <Image
           alt="home"
