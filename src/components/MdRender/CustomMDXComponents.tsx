@@ -31,7 +31,6 @@ interface ImageProps extends ComponentProps {
 // 代码块组件
 const CodeBlock = ({ children, className, ...props }: CodeBlockProps) => {
   const codeRef = useRef<HTMLElement>(null);
-  const language = className?.replace(/language-/, "") || "";
 
   useEffect(() => {
     if (codeRef.current) {
@@ -41,16 +40,7 @@ const CodeBlock = ({ children, className, ...props }: CodeBlockProps) => {
 
   return (
     <div className="relative group my-6">
-      <div className="flex items-center justify-between bg-neutral-800 px-4 py-2 rounded-t-lg">
-        <span className="text-sm text-gray-300">{language || "code"}</span>
-        <button
-          onClick={() => navigator.clipboard.writeText(children)}
-          className="text-gray-400 hover:text-white transition-colors text-sm"
-        >
-          copy
-        </button>
-      </div>
-      <pre className="bg-gray-800 rounded-b-lg overflow-x-auto scrollbar-hide">
+      <pre className="rounded-lg overflow-x-auto scrollbar-hide">
         <code
           ref={codeRef}
           className={clsx(className, "block p-4 text-sm")}
@@ -165,25 +155,19 @@ const Paragraph = ({ children, ...props }: ComponentProps) => (
 
 // 列表组件
 const UnorderedList = ({ children, ...props }: ComponentProps) => (
-  <ul
-    className="list-disc list-inside space-y-2 mb-4 ml-4 text-gray-700 dark:text-gray-300"
-    {...props}
-  >
+  <ul className="list-disc space-y-1 mb-2 ml-4 " {...props}>
     {children}
   </ul>
 );
 
 const OrderedList = ({ children, ...props }: ComponentProps) => (
-  <ol
-    className="list-decimal list-inside space-y-2 mb-4 ml-4 text-gray-700 dark:text-gray-300"
-    {...props}
-  >
+  <ol className="list-decimal space-y-2 mb-4 ml-4" {...props}>
     {children}
   </ol>
 );
 
 const ListItem = ({ children, ...props }: ComponentProps) => (
-  <li className="leading-4 text-xs" {...props}>
+  <li className="leading-relaxed" {...props}>
     {children}
   </li>
 );
@@ -293,7 +277,11 @@ const CustomMDXComponents = {
     ) {
       return children;
     }
-    return <pre {...props} className="overflow-x-auto">{children}</pre>;
+    return (
+      <pre {...props} className="overflow-x-auto">
+        {children}
+      </pre>
+    );
   },
 
   // 列表
