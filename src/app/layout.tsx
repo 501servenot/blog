@@ -41,6 +41,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="b66drKTDH0HxhwGp3chQiA"
+          async
+        />
+      </head>
       <body className={`${myfont.variable} antialiased text-neutral-300`}>
         <div className="mx-auto max-w-full sm:max-w-xl md:max-w-2xl lg:w-1/2 xl:max-w-xl px-8">
           <Cursor size={24} delay={0.25} color="#e9e9e9ff" />
