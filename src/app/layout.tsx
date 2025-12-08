@@ -47,6 +47,7 @@ export default function RootLayout({
           data-key="b66drKTDH0HxhwGp3chQiA"
           async
         />
+        <meta name="google-site-verification" content="hBZEcpvKj-OHEszFMkuotq7zz1Xj-p6U2ACA2AFPtkM" />
       </head>
       <body className={`${myfont.variable} antialiased text-neutral-300`}>
         <div className="mx-auto max-w-full sm:max-w-xl md:max-w-2xl lg:w-1/2 xl:max-w-xl px-8">
