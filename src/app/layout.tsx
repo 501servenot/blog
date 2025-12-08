@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./global.css";
 import Header from "@/components/Header";
-import Cursor from "@/components/Cursor";
+// import Cursor from "@/components/Cursor";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -14,19 +14,11 @@ const myfont = localFont({
       weight: "400",
       style: "normal",
     },
-    {
-      path: "./fonts/MapleMono-NF-CN-LightItalic.woff2",
-      weight: "300",
-      style: "light",
-    },
-    {
-      path: "./fonts/MapleMono-NF-CN-MediumItalic.woff2",
-      weight: "500",
-      style: "medium",
-    },
   ],
   variable: "--font-my-font",
   display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial"],
 });
 
 export const metadata: Metadata = {
@@ -51,7 +43,7 @@ export default function RootLayout({
       </head>
       <body className={`${myfont.variable} antialiased text-neutral-300`}>
         <div className="mx-auto max-w-full sm:max-w-xl md:max-w-2xl lg:w-1/2 xl:max-w-xl px-8">
-          <Cursor size={24} delay={0.25} color="#e9e9e9ff" />
+          {/* <Cursor size={24} delay={0.25} color="#e9e9e9ff" /> */}
           <Header />
           <main className="pt-20">{children}</main>
           <Analytics />

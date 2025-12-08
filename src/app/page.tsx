@@ -1,11 +1,13 @@
 "use client";
-import RollingText from "@/components/RollingText";
-import BlurText from "@/components/BlurText";
 import Image from "next/image";
 import SteamInfoShow from "@/components/SteamInfoShow";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
+import {lazy, Suspense} from "react";
 // import { Matrix, wave, Frame } from "@/components/ui/matrix";
+
+const BlurText = lazy(() => import("@/components/BlurText"));
+const RollingText = lazy(() => import("@/components/RollingText"));
 
 export default function Home() {
   const avatarRef = useRef<HTMLImageElement>(null)
@@ -95,6 +97,7 @@ export default function Home() {
           height={70}
           alt="avatar"
           className="object-cover w-25 h-25 mt-20"
+          priority
         />
         <h1 className="mt-6">
           <RollingText text="Hello" duration={0.8} delay={0.1} direction="up" />
@@ -162,7 +165,9 @@ export default function Home() {
           />
         </div> */}
         <div className="mt-6">
-          <SteamInfoShow pollingInterval={15000} />
+          <Suspense fallback={<div className="h-32" />}>
+            <SteamInfoShow pollingInterval={15000} />
+          </Suspense>
         </div>
       </main>
     </div>
